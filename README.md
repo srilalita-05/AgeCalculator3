@@ -43,10 +43,10 @@ Before running the program, make sure you have the following:
 
 The program starts by checking if an argument (DOB) is passed through the command line:
 
-if (args.length == 0) {
-    System.out.println("Please provide your date of birth as a command-line argument in the format dd-MM-yyyy.");
-    return;
-}
+    if (args.length == 0) {
+        System.out.println("Please provide your date of birth as a command-line argument in the format dd-MM-yyyy.");
+        return;
+    }
 
 If no argument is provided, it prints an error message and exits.
 
@@ -54,40 +54,40 @@ If no argument is provided, it prints an error message and exits.
 
 The input string is split into three parts (day, month, and year):
 
-String[] dateParts = dobInput.split("-"); 
+    String[] dateParts = dobInput.split("-"); 
 
 If there are not exactly three parts (day, month, year), a DateTimeParseException is thrown.
 
 We also check if the month is between 1 and 12:
 
-if (month < 1 || month > 12) {
-    System.out.println("Invalid date: month must be between 1 and 12.");
-    return;
-}
+    if (month < 1 || month > 12) {
+        System.out.println("Invalid date: month must be between 1 and 12.");
+        return;
+    }
 
 3. Day Validation
 
 The isValidDay method checks if the provided day is valid for the given month and year (considering leap years for February). It handles the different number of days in each month:
 
-private static boolean isValidDay(int day, int month, int year) {
-    // Handles days in February, months with 30 days, and months with 31 days
-}
+    private static boolean isValidDay(int day, int month, int year) {
+        // Handles days in February, months with 30 days, and months with 31 days
+    }
 
 4. Leap Year Check
 
 Leap years are calculated in the isLeapYear method:
 
-private static boolean isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-}
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
 
 5. Age Calculation
 
 Once the input is validated, the program calculates the age using the Period.between() method from the java.time package:
 
-LocalDate dob = LocalDate.of(year, month, day);
-LocalDate currentDate = LocalDate.now();
-Period age = Period.between(dob, currentDate);
+    LocalDate dob = LocalDate.of(year, month, day);
+    LocalDate currentDate = LocalDate.now();
+    Period age = Period.between(dob, currentDate);
 
 This gives the age in years, months, and days.
 6. Error Handling
@@ -97,22 +97,23 @@ The program includes error handling for:
     Invalid input: When the date is in the wrong format or the numbers don't make sense (e.g., month > 12).
     Future date: The program checks if the DOB is in the future, which is an invalid input.
 
-How to Run the Program
+*How to Run the Program*
+
 1. Compile the Program:
 
 Open your terminal/command prompt and navigate to the directory where the file is saved. Compile the Java file with the following command:
 
-javac AgeCalculator3.java
+    javac AgeCalculator3.java
 
 2. Run the Program:
 
 To run the program, provide your date of birth as an argument in the correct format (dd-MM-yyyy):
 
-java AgeCalculator3 25-12-1995
+    java AgeCalculator3 25-12-1995
 
 This will output something like:
 
-Your age is 28 years, 2 months, and 15 days.
+    Your age is 28 years, 2 months, and 15 days.
 
 Examples
 
@@ -130,16 +131,16 @@ java AgeCalculator3 01-01-2025
 
 Output:
 
-The date of birth cannot be in the future.
+    The date of birth cannot be in the future.
 
-    Invalid format (incorrect delimiter):
+Invalid format (incorrect delimiter):
 
-java AgeCalculator3 01/01/2000
+    java AgeCalculator3 01/01/2000
 
 Output:
 
-Invalid date format or non-existent date. Please enter the date in the format dd-MM-yyyy.
+    Invalid date format or non-existent date. Please enter the date in the format dd-MM-yyyy.
 
-Conclusion
+**Conclusion**
 
 This program provides an easy-to-use method to calculate a person's age based on their date of birth. It ensures that the input is valid, performs the necessary checks, and handles errors gracefully. You can use this as a foundation for more complex date-based calculations in Java.
