@@ -1,5 +1,5 @@
-AgeCalculator3 - Java Program to Calculate Age
-Overview
+***AgeCalculator3** - Java Program to Calculate Age*
+*Overview*
 
 This program calculates the age of a person based on their date of birth (DOB). It takes the user's DOB as input in the format dd-MM-yyyy and computes their age in years, months, and days. The program also performs various validations to ensure the provided date is correct and in the right format.
 Prerequisites
@@ -9,7 +9,7 @@ Before running the program, make sure you have the following:
     Java Development Kit (JDK) installed (preferably version 8 or above).
     A command-line interface (CLI) like Terminal (Mac/Linux) or Command Prompt (Windows).
 
-How the Program Works
+*How the Program Works*
 1. Input:
 
     The program accepts the date of birth (DOB) as a command-line argument.
@@ -35,9 +35,10 @@ How the Program Works
         Your age is X years, Y months, and Z days.
     If any error occurs, appropriate error messages are displayed.
 
-Code Walkthrough
+**Code Walkthrough**
 
-Let's break down the key parts of the code:
+*Let's break down the key parts of the code:*
+
 1. Input Handling
 
 The program starts by checking if an argument (DOB) is passed through the command line:
@@ -48,6 +49,7 @@ if (args.length == 0) {
 }
 
 If no argument is provided, it prints an error message and exits.
+
 2. Parsing and Validation
 
 The input string is split into three parts (day, month, and year):
