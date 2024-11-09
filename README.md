@@ -117,17 +117,17 @@ This will output something like:
 
 Examples
 
-    Valid input:
+Valid input:
 
-java AgeCalculator3 01-01-2000
+    java AgeCalculator3 01-01-2000
 
 Output:
 
-Your age is 24 years, 10 months, and 5 days.
+    Your age is 24 years, 10 months, and 5 days.
 
-    Invalid input (future date):
+Invalid input (future date):
 
-java AgeCalculator3 01-01-2025
+    java AgeCalculator3 01-01-2025
 
 Output:
 
